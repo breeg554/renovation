@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "../components/Header/Header"
 import theme from "./theme"
+import Footer from "./Footer/Footer"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 const GlobalStyle = createGlobalStyle`
   *{
@@ -19,13 +20,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `
-export default function Layout({ children }) {
+export default function Layout(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header />
-        {children}
+        <Header location={props.location} />
+        {props.children}
+        <Footer />
       </ThemeProvider>
     </div>
   )

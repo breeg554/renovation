@@ -6,10 +6,18 @@ const theme = {
     darkGray: "#2c2727",
   },
   fontSize: {
+    xs: "1em",
+    s: "1.5em",
     m: "2em",
+    l: "3em",
+    xl: "4em",
   },
-  margins: {
-    mobile: "1.5em",
+
+  mediaQ: {
+    small: "@media (min-width:500px)",
+    medium: "@media (min-width:700px)",
+    big: "@media (min-width:1200px)",
+    large: "@media (min-width:1400px)",
   },
 }
 export default theme

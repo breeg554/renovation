@@ -4,7 +4,7 @@ import img from "../../images/main.jpg"
 const Wrap = styled.section`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-image: url(${img});
   background-size: cover;
   background-position: right;
@@ -21,17 +21,29 @@ const Wrap = styled.section`
 `
 const HeadingWrapper = styled.div`
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 0.5em;
   z-index: 1;
+  ${({ theme }) => theme.mediaQ.small} {
+    left: 1em;
+  }
 `
 const Name = styled.h1`
   font-size: 2.2rem;
   font-weight: 300;
+  ${({ theme }) => theme.mediaQ.small} {
+    font-size: ${({ theme }) => theme.fontSize.l};
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+  }
 `
 const SubTitle = styled.h1`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-weight: 100;
+  ${({ theme }) => theme.mediaQ.small} {
+    font-size: ${({ theme }) => theme.fontSize.s};
+  }
 `
 const Wrapper = () => {
   return (

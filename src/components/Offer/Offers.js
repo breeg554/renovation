@@ -1,24 +1,34 @@
 import React from "react"
 import styled from "styled-components"
-import { offers } from "../../utils/data"
+import { offers } from "../../data-content/offers"
+import { Title } from "../SectionTitle"
 import Offer from "./Offer"
+
 const OurOffer = styled.section`
   width: 100%;
-  padding: 2em 1rem;
+  padding: 3em 1rem;
   text-align: center;
-`
-const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.gray};
-  font-weight: 300;
-  font-size: ${({ theme }) => theme.fontSize.m};
-  margin-bottom: ${({ theme }) => theme.margins.mobile};
+  ${({ theme }) => theme.mediaQ.medium} {
+    padding: 6em 1rem;
+  }
 `
 
 const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 950px;
+  margin: 0 auto;
+
+  ${({ theme }) => theme.mediaQ.medium} {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0.5em;
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    max-width: 1350px;
+  }
 `
 const Offers = () => {
   const allOffers = offers.map((single, index) => (
