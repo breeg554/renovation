@@ -5,21 +5,36 @@ import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 import { data } from "../../data-content/slider.js"
 import { Title } from "../SectionTitle"
+
 const Wrapper = styled.div`
   width: 100%;
+  padding: 0.5em;
   overflow: hidden;
   margin: 1.5em 0;
 `
 const SliderWrapper = styled.div`
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
+  margin: 0 auto;
+  .slick-arrow {
+    z-index: 1;
+  }
+  .slick-prev {
+    left: 1em;
+  }
+  .slick-next {
+    right: 1em;
+  }
 `
 const Slide = styled.div`
-  height: 300px;
+  height: 50vh;
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    height: 50vh;
   }
 `
 
@@ -31,7 +46,7 @@ export default class SimpleSlider extends Component {
       autoplaySpeed: 3000,
       infinite: true,
       speed: 500,
-      arrows: false,
+      arrows: true,
       slidesToShow: 1,
       slidesToScroll: 1,
     }
@@ -43,6 +58,7 @@ export default class SimpleSlider extends Component {
     return (
       <Wrapper>
         <Title>Ostatnie Projekty</Title>
+
         <SliderWrapper>
           <Slider {...settings}>{Slides}</Slider>
         </SliderWrapper>

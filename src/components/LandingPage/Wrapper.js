@@ -18,10 +18,13 @@ const Wrap = styled.section`
     right: 0;
     background-color: rgba(0, 0, 0, 0.4);
   }
+  ${({ theme }) => theme.mediaQ.big} {
+    background-position: center;
+  }
 `
 const HeadingWrapper = styled.div`
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 0.5em;
   z-index: 1;
   ${({ theme }) => theme.mediaQ.small} {
@@ -37,12 +40,18 @@ const Name = styled.h1`
   ${({ theme }) => theme.mediaQ.medium} {
     font-size: ${({ theme }) => theme.fontSize.xl};
   }
+  ${({ theme }) => theme.mediaQ.big} {
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+  }
 `
 const SubTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.xs};
   font-weight: 100;
   ${({ theme }) => theme.mediaQ.small} {
     font-size: ${({ theme }) => theme.fontSize.s};
+  }
+  ${({ theme }) => theme.mediaQ.big} {
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `
 const Wrapper = () => {

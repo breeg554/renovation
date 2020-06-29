@@ -6,19 +6,23 @@ export const Title = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.m};
   margin-bottom: 1.5em;
   text-align: center;
+  ::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    z-index: 10;
+    top: 100%;
+    left: 50%;
+    color: ${({ theme }) => theme.colors.orange};
+    width: 50px;
+    height: 10px;
+  }
   ${({ theme }) => theme.mediaQ.medium} {
     font-size: ${({ theme }) => theme.fontSize.l};
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
   }
-//   ::after {
-//     content: "";
-//     position: absolute;
-//     display: inline-block;
-//     z-index: 10;
-//     top: 50%;
-//     left: 50%;
-//     color: ${({ theme }) => theme.colors.orange};
-//     width: 100%;
-//     height: 10px;
-//   }
+  ${({ theme }) => theme.mediaQ.big} {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+    margin-bottom: 2em;
+  }
 `

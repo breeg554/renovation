@@ -11,6 +11,7 @@ const theme = {
     m: "2em",
     l: "3em",
     xl: "4em",
+    xxl: "5.5em",
   },
 
   mediaQ: {

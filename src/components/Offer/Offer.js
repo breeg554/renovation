@@ -2,55 +2,37 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledOffer = styled.article`
-  background-color: ${({ theme }) => theme.colors.gray};
-  margin-bottom: 1.5em;
-  margin-left: auto;
-  margin-right: auto;
-  color: ${({ theme }) => theme.colors.white};
-  display: flex;
-  width: 100%;
-  max-width: 450px;
-  height: 150px;
-  border-radius: 5px;
-  &:hover img {
-    transform: scale(1.1);
-  }
-`
-const ImgWrapper = styled.div`
-  max-width: 50%;
-  height: 100%;
-  overflow: hidden;
-  img {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.1s ease-in-out;
-  }
-`
-const ContentWrapper = styled.div`
-  padding: 0.5em;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  background-image: url(${({ img }) => img});
+  background-position: center;
+  background-size: cover;
+  height: 190px;
+  margin-bottom: 1em;
   h3 {
-    font-weight: 300;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
   }
 `
 
 const Offer = ({ data }) => {
   return (
-    <StyledOffer>
-      <ImgWrapper>
-        <img src={data.img} alt={data.alt} />
-      </ImgWrapper>
-      <ContentWrapper>
-        <h3>{data.name}</h3>
-      </ContentWrapper>
+    <StyledOffer img={data.img}>
+      <h3>{data.name}</h3>
     </StyledOffer>
   )
 }
-
 export default Offer

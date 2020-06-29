@@ -15,6 +15,9 @@ const HeaderWrapper = styled.header`
   align-items: center;
   padding: 0.5em;
   box-shadow: 0px 6px 35px -1px rgba(0, 0, 0, 0.13);
+  ${({ theme }) => theme.mediaQ.medium} {
+    padding: 0.5em 1em;
+  }
 `
 const LogoImg = styled.img`
   width: 60px;
@@ -33,6 +36,9 @@ const NavBtn = styled.button`
     line-height: 30px;
     color: ${({ theme }) => theme.colors.gray};
   }
+  ${({ theme }) => theme.mediaQ.medium} {
+    display: none;
+  }
 `
 const Navigation = styled.nav`
   position: absolute;
@@ -44,6 +50,13 @@ const Navigation = styled.nav`
   padding: 0.5em 1em;
   transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.2s ease-in-out;
+  ${({ theme }) => theme.mediaQ.medium} {
+    transition: none;
+    transform: none;
+    position: static;
+    height: auto;
+    padding: 0;
+  }
 `
 const SideNav = styled.ul`
   width: 100%;
@@ -53,6 +66,10 @@ const SideNav = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${({ theme }) => theme.mediaQ.medium} {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 `
 const NavElement = styled.li`
   margin-bottom: 2em;
@@ -62,6 +79,10 @@ const NavElement = styled.li`
     text-decoration: none;
     color: ${({ theme, isThat }) =>
       isThat ? theme.colors.orange : theme.colors.gray};
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    margin: 0 0 0 0.4em;
+    font-size: 1.2em;
   }
 `
 

@@ -36,7 +36,7 @@ const Offers = () => {
   ))
   return (
     <OurOffer>
-      <Title>Oferta</Title>
+      <Title>Moje Usługi</Title>
       <Wrapper>{allOffers}</Wrapper>
     </OurOffer>
   )
