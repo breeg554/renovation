@@ -1,12 +1,9 @@
 import React from "react"
-import styled from "styled-components"
 import Layout from "../components/Layout"
 import Offer from "../components/Offer/Offers"
 import Contact from "../components/Contact/Contact"
-import Slider from "../components/Slider/Slider"
 import About from "../components/About/About"
 import Gallery from "../components/Gallery/Gallery"
-import { Link } from "gatsby"
 import LandingPage from "../components/LandingPage/Wrapper"
 
 const IndexPage = () => {

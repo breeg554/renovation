@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Header from "../components/Header/Header"
 import theme from "./theme"
 import Footer from "./Footer/Footer"
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
-import { AiOutlineLoading } from "react-icons/ai"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
+
 const GlobalStyle = createGlobalStyle`
   html{
     scroll-behavior: smooth;
@@ -24,24 +24,8 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `
-// const Preloader = styled.div`
-//   display: ${({ isLoaded }) => (isLoaded ? "none" : "block")};
-//   position: fixed;
-//   z-index: 100;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   background-color: ${({ theme }) => theme.colors.darkGray};
-//   color: #fff;
-// `
+
 export default function Layout(props) {
-  // const [isLoaded, setLoaded] = useState(false)
-
-  // useEffect(() => {
-  //   setLoaded(true)
-  // }, [])
-
   return (
     <ThemeProvider theme={theme}>
       <>
@@ -49,8 +33,6 @@ export default function Layout(props) {
         <Header />
         {props.children}
         <Footer />
-
-        {/* <Preloader isLoaded={isLoaded}>Loader</Preloader> */}
       </>
     </ThemeProvider>
   )
