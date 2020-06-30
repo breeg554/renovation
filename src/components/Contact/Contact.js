@@ -1,10 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { Title } from "../SectionTitle"
-import { AiOutlineMail } from "react-icons/ai"
-import { BsPhone } from "react-icons/bs"
-import { FiPhone } from "react-icons/fi"
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai"
+// Ant Design Icons - https://github.com/ant-design/ant-design-icons
+// License: MIT https://opensource.org/licenses/MIT
+// Bootstrap Icons - https://github.com/twbs/icons
+// License: MIT https://opensource.org/licenses/MIT
 import bgcImage from "../../images/main2.jpg"
+import { BsPhone } from "react-icons/bs"
 const ContactWrapper = styled.section`
   position: relative;
   width: 100%;
@@ -34,7 +37,7 @@ const ContactWrapper = styled.section`
     margin-top: 6em;
   }
   ${({ theme }) => theme.mediaQ.big} {
-    padding: 4em 1em;
+    padding: 5em 1em;
   }
 `
 const Adress = styled.address`
@@ -94,28 +97,28 @@ const Icon = styled.span`
 
 const Contact = () => {
   return (
-    <ContactWrapper>
+    <ContactWrapper id="contact">
       <Title>Kontakt</Title>
       <Adress>
         <DetailsWrapper>
-          <Icon>
+          <Icon data-license="Copyright (c) 2018-present Ant UED, https://xtech.antfin.com/">
             <AiOutlineMail />
           </Icon>
-          <p>Email</p>
+          <p>Email:</p>
           <p>zkustra.gmail.com</p>
         </DetailsWrapper>
         <DetailsWrapper>
-          <Icon>
+          <Icon data-license="Copyright (c) 2019 The Bootstrap Authors">
             <BsPhone />
           </Icon>
-          <p>Tel</p>
-          <p>333 222 111</p>
+          <p>Tel:</p>
+          <p>+48 333 222 111</p>
         </DetailsWrapper>
         <DetailsWrapper>
-          <Icon>
-            <FiPhone />
+          <Icon data-license="Copyright (c) 2018-present Ant UED, https://xtech.antfin.com/">
+            <AiOutlinePhone />
           </Icon>
-          <p>Tel</p>
+          <p>Tel:</p>
           <p>16 3322211</p>
         </DetailsWrapper>
       </Adress>

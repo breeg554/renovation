@@ -6,8 +6,9 @@ import styled from "styled-components"
 const AboutMe = styled.section`
   padding: 2em 0.5em;
   width: 100%;
+
   ${({ theme }) => theme.mediaQ.big} {
-    padding: 4em 0.5em;
+    padding: 5.5em 0.5em;
     margin-bottom: 2em;
   }
 `
@@ -103,7 +104,7 @@ const StyledAddress = styled.address`
 `
 const About = () => {
   return (
-    <AboutMe>
+    <AboutMe id="about">
       <Title>Trochę o mnie</Title>
       <Wrapper>
         <ImgWrapper>

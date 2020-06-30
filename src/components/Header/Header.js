@@ -77,12 +77,18 @@ const NavElement = styled.li`
 
   a {
     text-decoration: none;
-    color: ${({ theme, isThat }) =>
-      isThat ? theme.colors.orange : theme.colors.gray};
+    color: ${({ theme }) => theme.colors.gray};
+    transition: color 0.1s ease-in-out;
+  }
+  &:hover a {
+    color: ${({ theme }) => theme.colors.orange};
   }
   ${({ theme }) => theme.mediaQ.medium} {
     margin: 0 0 0 0.4em;
     font-size: 1.2em;
+  }
+  ${({ theme }) => theme.mediaQ.big} {
+    margin-left: 0.7em;
   }
 `
 
@@ -94,7 +100,6 @@ const Header = props => {
     const handleClickOutsite = e => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
         setOpen(false)
-        console.log("click")
       }
     }
 
@@ -113,14 +118,20 @@ const Header = props => {
       </NavBtn>
       <Navigation isOpen={isOpen}>
         <SideNav>
-          <NavElement isThat={props.location === "/" ? true : false}>
+          <NavElement onClick={() => setOpen(false)}>
             <Link to="/">Strona głowna</Link>
           </NavElement>
-          <NavElement isThat={props.location === "/about" ? true : false}>
-            <Link to="/about">O mnie</Link>
+          <NavElement onClick={() => setOpen(false)}>
+            <Link to="#about">O mnie</Link>
           </NavElement>
-          <NavElement isThat={props.location === "/gallery" ? true : false}>
-            <Link to="/gallery">Galeria</Link>
+          <NavElement onClick={() => setOpen(false)}>
+            <Link to="#offers">Oferta</Link>
+          </NavElement>
+          <NavElement onClick={() => setOpen(false)}>
+            <Link to="#contact">Kontakt</Link>
+          </NavElement>
+          <NavElement onClick={() => setOpen(false)}>
+            <Link to="#gallery">Galeria</Link>
           </NavElement>
         </SideNav>
       </Navigation>

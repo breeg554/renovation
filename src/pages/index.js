@@ -11,13 +11,16 @@ import LandingPage from "../components/LandingPage/Wrapper"
 
 const IndexPage = () => {
   return (
-    <Layout location="/">
-      <LandingPage />
-      <Offer />
-      <About />
-      <Contact />
-      <Slider />
-      <Gallery />
+    <Layout>
+      <main>
+        <LandingPage />
+        <About />
+        <Offer />
+
+        <Contact />
+        {/* <Slider /> */}
+        <Gallery />
+      </main>
     </Layout>
   )
 }

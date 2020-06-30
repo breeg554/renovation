@@ -16,7 +16,7 @@ const Wrap = styled.section`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   ${({ theme }) => theme.mediaQ.big} {
     background-position: center;
@@ -24,6 +24,7 @@ const Wrap = styled.section`
 `
 const HeadingWrapper = styled.div`
   position: absolute;
+  overflow: hidden;
   top: 50%;
   left: 0.5em;
   z-index: 1;

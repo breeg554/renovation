@@ -35,7 +35,7 @@ const Offers = () => {
     <Offer key={index} data={single} />
   ))
   return (
-    <OurOffer>
+    <OurOffer id={"offers"}>
       <Title>Moje Usługi</Title>
       <Wrapper>{allOffers}</Wrapper>
     </OurOffer>
