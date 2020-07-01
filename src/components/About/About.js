@@ -4,7 +4,7 @@ import ZK from "../../images/ZK.jpg"
 import styled from "styled-components"
 
 const AboutMe = styled.section`
-  padding: 2em 0.5em;
+  padding: 3em 0.5em 2em 0.5em;
   width: 100%;
 
   ${({ theme }) => theme.mediaQ.big} {
@@ -33,6 +33,7 @@ const ImgWrapper = styled.div`
   width: 100%;
   max-width: 500px;
   height: 60vh;
+  min-height: 450px;
   overflow: hidden;
   img {
     width: 100%;
@@ -40,12 +41,13 @@ const ImgWrapper = styled.div`
     object-fit: cover;
   }
   ${({ theme }) => theme.mediaQ.medium} {
-    height: 50vh;
     max-width: 450px;
+    min-height: 500px;
     box-shadow: -14px 14px 17px -1px rgba(51, 51, 51, 0.5);
   }
   ${({ theme }) => theme.mediaQ.big} {
     height: 65vh;
+
     max-width: 550px;
   }
 `

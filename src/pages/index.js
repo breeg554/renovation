@@ -9,13 +9,11 @@ import LandingPage from "../components/LandingPage/Wrapper"
 const IndexPage = () => {
   return (
     <Layout>
-      <main>
+      <main id="root">
         <LandingPage />
         <About />
         <Offer />
-
         <Contact />
-        {/* <Slider /> */}
         <Gallery />
       </main>
     </Layout>

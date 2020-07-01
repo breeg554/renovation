@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 import styled from "styled-components"
 import Logo from "../../images/logo.png"
 import { FiMenu } from "react-icons/fi"
-import { Link } from "gatsby"
+import { Link } from "react-scroll"
 const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
@@ -74,11 +74,14 @@ const SideNav = styled.ul`
 const NavElement = styled.li`
   margin-bottom: 2em;
   font-size: 1.5em;
-
+  cursor: pointer;
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.gray};
     transition: color 0.1s ease-in-out;
+  }
+  a.active {
+    color: ${({ theme }) => theme.colors.orange};
   }
   &:hover a {
     color: ${({ theme }) => theme.colors.orange};
@@ -91,6 +94,14 @@ const NavElement = styled.li`
     margin-left: 0.7em;
   }
 `
+
+const menuItems = [
+  { id: "home", name: "Strona głowna" },
+  { id: "about", name: "O mnie" },
+  { id: "offers", name: "Usługi" },
+  { id: "contact", name: "Kontakt" },
+  { id: "gallery", name: "Galeria" },
+]
 
 const Header = props => {
   const wrapperRef = useRef(null)
@@ -118,21 +129,22 @@ const Header = props => {
       </NavBtn>
       <Navigation isOpen={isOpen}>
         <SideNav>
-          <NavElement onClick={() => setOpen(false)}>
-            <Link to="/">Strona głowna</Link>
-          </NavElement>
-          <NavElement onClick={() => setOpen(false)}>
-            <Link to="#about">O mnie</Link>
-          </NavElement>
-          <NavElement onClick={() => setOpen(false)}>
-            <Link to="#offers">Oferta</Link>
-          </NavElement>
-          <NavElement onClick={() => setOpen(false)}>
-            <Link to="#contact">Kontakt</Link>
-          </NavElement>
-          <NavElement onClick={() => setOpen(false)}>
-            <Link to="#gallery">Galeria</Link>
-          </NavElement>
+          {menuItems.map((item, index) => (
+            <NavElement key={index}>
+              <Link
+                onClick={() => setTimeout(() => setOpen(false), 300)}
+                activeClass="active"
+                to={item.id}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                offset={0}
+                duration={500}
+              >
+                {item.name}
+              </Link>
+            </NavElement>
+          ))}
         </SideNav>
       </Navigation>
     </HeaderWrapper>

@@ -57,7 +57,7 @@ const SubTitle = styled.h1`
 `
 const Wrapper = () => {
   return (
-    <Wrap>
+    <Wrap id="home">
       <HeadingWrapper>
         <Name>Zbigniew Kustra</Name>
         <SubTitle>Usługi remontowo-budowlane</SubTitle>
