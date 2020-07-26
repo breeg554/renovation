@@ -42,12 +42,12 @@ const ImgWrapper = styled.div`
   }
   ${({ theme }) => theme.mediaQ.medium} {
     max-width: 450px;
-    min-height: 500px;
+    min-height: 480px;
     box-shadow: -14px 14px 17px -1px rgba(51, 51, 51, 0.5);
   }
   ${({ theme }) => theme.mediaQ.big} {
     height: 65vh;
-
+    min-height: 550px;
     max-width: 550px;
   }
 `
@@ -117,22 +117,21 @@ const About = () => {
           <h3>Cześć,</h3>
           <h3>jestem Zbigniew </h3>
           <p>
-            Od 20 lat interesuje sie i pracuje and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the
-            1500s.
+            Posiadam ponad 20 letnie doświadczenie w branży. Pracowałem między
+            innymi w Wielkiej Brytanii i Holandii przy kompleksowych
+            wykończeniach wnętrz, dzięki czemu zdobyłem cenne praktyczne
+            doświadczenie.
           </p>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Zlecenia wykonuję fachowo i w terminie bez zbędnego odwlekania w
+            czasie. Gwarantuję konkurencyjne ceny.
           </p>
           <StyledAddress>
             <p>
-              <span>Email:</span> zbigniew@gmail.com
+              <span>Email:</span> z.kustra2@gmail.com
             </p>
             <p>
-              <span>Tel:</span> 321 111 323
+              <span>Tel:</span> +48 793 716 916
             </p>
           </StyledAddress>
         </ContentWrapper>

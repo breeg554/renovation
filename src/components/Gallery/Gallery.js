@@ -3,7 +3,7 @@ import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css" //   Copyright (c) 2016 Chris Fritz
 import styled from "styled-components"
 import { Title } from "../SectionTitle"
-import { images } from "../../data-content/latestProjects"
+import Client from "./Contentful"
 
 const Wrapper = styled.section`
   width: 100%;
@@ -80,13 +80,18 @@ const GalleryImg = styled.div`
       top: 80%;
     }
   }
+  @media (max-height: 500px) {
+    height: 170px;
+  }
 `
 const ImgWrapper = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 0.5em;
   max-width: 1200px;
   margin: 0 auto;
+
   ${({ theme }) => theme.mediaQ.small} {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 0.5em;
@@ -99,24 +104,56 @@ const ImgWrapper = styled.div`
     grid-row-gap: 1em;
   }
 `
-
+const ErrorProjects = styled.p`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+`
 export default class Gallery extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      images: [],
       photoIndex: 0,
       isOpen: false,
-      galleryImages: [],
+    }
+  }
+  formatData = data => {
+    const project = { ...data, src: data.src.fields.file.url }
+    return project
+  }
+  getData = () => {
+    try {
+      Client.getEntries({
+        content_type: "projects",
+      })
+        .then(res => {
+          if (res.items) {
+            return res.items
+          } else {
+            throw new Error("contentful err")
+          }
+        })
+        .then(res => {
+          this.setState({
+            images: res.map(field => this.formatData(field.fields)),
+          })
+        })
+    } catch (err) {
+      console.log(err)
     }
   }
   createImages = () => {
+    const { images } = this.state
+
     return images.map((img, index) => (
       <GalleryImg
         key={index}
         id={index}
         onClick={() => {
-          this.setState({ photoIndex: img.id, isOpen: true })
+          this.setState({ photoIndex: index, isOpen: true })
         }}
       >
         <img src={img.src} alt={img.alt} />
@@ -124,19 +161,23 @@ export default class Gallery extends Component {
       </GalleryImg>
     ))
   }
+
   componentDidMount() {
-    const tmpGalleryImages = this.createImages()
-    this.setState({
-      galleryImages: tmpGalleryImages,
-    })
+    this.getData()
   }
   render() {
-    const { photoIndex, isOpen, galleryImages } = this.state
-
+    const { photoIndex, isOpen, images } = this.state
+    const tmpGalleryImages = this.createImages()
     return (
       <Wrapper id="gallery">
         <Title>Ostatnie Projekty</Title>
-        <ImgWrapper>{galleryImages}</ImgWrapper>
+        <ImgWrapper>
+          {images.length > 0 ? (
+            tmpGalleryImages
+          ) : (
+            <ErrorProjects>Brak projektów</ErrorProjects>
+          )}
+        </ImgWrapper>
         {/* Copyright (c) 2016 Chris Fritz */}
         {isOpen && (
           <Lightbox

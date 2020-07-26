@@ -74,8 +74,8 @@ const Footer = () => {
       <Content>
         <h4>Kontakt</h4>
         <List>
-          <li>Tel: +48 312 313 111</li>
-          <li>Email: zbigniew@gamil.com</li>
+          <li>Tel: +48 793 716 916</li>
+          <li>Email: z.kustra2@gmail.com</li>
         </List>
       </Content>
     </StyledFooter>

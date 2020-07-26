@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Title } from "../SectionTitle"
-import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai"
+import { AiOutlineMail } from "react-icons/ai"
 // Ant Design Icons - https://github.com/ant-design/ant-design-icons
 // License: MIT https://opensource.org/licenses/MIT
 // Bootstrap Icons - https://github.com/twbs/icons
@@ -78,7 +78,7 @@ const DetailsWrapper = styled.div`
     width: 33%;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    max-width: 250px;
+    max-width: 350px;
   }
   ${({ theme }) => theme.mediaQ.medium} {
     p:nth-of-type(1) {
@@ -101,25 +101,18 @@ const Contact = () => {
       <Title>Kontakt</Title>
       <Adress>
         <DetailsWrapper>
-          <Icon data-license="Copyright (c) 2018-present Ant UED, https://xtech.antfin.com/">
-            <AiOutlineMail />
-          </Icon>
-          <p>Email:</p>
-          <p>zkustra.gmail.com</p>
-        </DetailsWrapper>
-        <DetailsWrapper>
           <Icon data-license="Copyright (c) 2019 The Bootstrap Authors">
             <BsPhone />
           </Icon>
           <p>Tel:</p>
-          <p>+48 333 222 111</p>
+          <p>+48 793 716 916</p>
         </DetailsWrapper>
         <DetailsWrapper>
           <Icon data-license="Copyright (c) 2018-present Ant UED, https://xtech.antfin.com/">
-            <AiOutlinePhone />
+            <AiOutlineMail />
           </Icon>
-          <p>Tel:</p>
-          <p>16 3322211</p>
+          <p>Email:</p>
+          <p>z.kustra2@gmail.com</p>
         </DetailsWrapper>
       </Adress>
     </ContactWrapper>

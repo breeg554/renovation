@@ -20,6 +20,7 @@ const HeaderWrapper = styled.header`
   }
 `
 const LogoImg = styled.img`
+  cursor: pointer;
   width: 60px;
   ${({ theme }) => theme.mediaQ.medium} {
     width: 80px;
@@ -123,7 +124,19 @@ const Header = props => {
 
   return (
     <HeaderWrapper ref={wrapperRef}>
-      <LogoImg src={Logo} alt="logo Zbigniew Kustra" />
+      <Link
+        onClick={() => setTimeout(() => setOpen(false), 300)}
+        activeClass="active"
+        to="home"
+        spy={true}
+        smooth={true}
+        hashSpy={true}
+        offset={-20}
+        duration={500}
+      >
+        <LogoImg src={Logo} alt="Zbigniew Kustra" />
+      </Link>
+
       <NavBtn onClick={() => setOpen(!isOpen)}>
         <FiMenu />
       </NavBtn>
@@ -138,7 +151,7 @@ const Header = props => {
                 spy={true}
                 smooth={true}
                 hashSpy={true}
-                offset={0}
+                offset={-30}
                 duration={500}
               >
                 {item.name}
