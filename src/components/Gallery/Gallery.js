@@ -32,11 +32,11 @@ const GalleryImg = styled.div`
     text-align: center;
     position: absolute;
     z-index: 1;
-    top: 90%;
+    bottom: -10%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: top 0.1s ease-in-out, opacity 0.1s ease-in-out;
+    transition: bottom 0.1s ease-in-out, opacity 0.1s ease-in-out;
     color: #fff;
   }
   &::after {
@@ -60,7 +60,7 @@ const GalleryImg = styled.div`
   }
   &:hover span {
     opacity: 1;
-    top: 75%;
+    bottom: 10%;
   }
   ${({ theme }) => theme.mediaQ.small} {
     height: 20vh;
@@ -70,14 +70,11 @@ const GalleryImg = styled.div`
     span {
       width: 90%;
     }
-    &:hover span {
-      top: 65%;
-    }
   }
   ${({ theme }) => theme.mediaQ.big} {
     height: 30vh;
     &:hover span {
-      top: 80%;
+      bottom: 5%;
     }
   }
   @media (max-height: 500px) {
