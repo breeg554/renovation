@@ -9,7 +9,7 @@ export default class Application extends React.Component {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="Usługi remontowo budowlane Dynów, Rzeszów i okolice - profesjonalne wykończenia wnętrz tanio i sprwnie. Nie trac czasu zadzwoń +48 793 716 916"
+            content="Usługi remontowo budowlane Dynów, Rzeszów i okolice - profesjonalne wykończenia wnętrz tanio i sprwnie. Nie trac czasu zadzwoń +48 793 716 916, ukłdanie płytek, montaż sufitów podwieszanych, montaż drzwi, kompleksowe wykończenia wnętrz"
           />
           <title data-react-helmet="true">
             Zbigniew Kustra - usługi remontowo budowlane

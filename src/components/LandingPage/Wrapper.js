@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import img from "../../images/main.jpg"
+import gsap from "gsap"
 const Wrap = styled.section`
   position: relative;
   width: 100%;
@@ -56,11 +57,30 @@ const SubTitle = styled.h1`
   }
 `
 const Wrapper = () => {
+  const titleWrap = useRef(null)
+  const subtitleWrap = useRef(null)
+  useEffect(() => {
+    const title = titleWrap.current
+    const subtitle = subtitleWrap.current
+
+    gsap.set([title, subtitle], { autoAlpha: 0 })
+    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } })
+    tl.fromTo(
+      title,
+      { x: "-=300" },
+      { duration: 1, delay: 0.5, x: "+=300", autoAlpha: 1 }
+    ).fromTo(
+      subtitle,
+      { x: "-=300" },
+      { duration: 1, x: "+=300", autoAlpha: 1 },
+      "-=0.75"
+    )
+  }, [])
   return (
     <Wrap id="home">
       <HeadingWrapper>
-        <Name>Zbigniew Kustra</Name>
-        <SubTitle>Usługi remontowo-budowlane</SubTitle>
+        <Name ref={titleWrap}>Zbigniew Kustra</Name>
+        <SubTitle ref={subtitleWrap}>Usługi remontowo-budowlane</SubTitle>
       </HeadingWrapper>
     </Wrap>
   )

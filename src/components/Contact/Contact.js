@@ -97,7 +97,7 @@ const Icon = styled.span`
 
 const Contact = () => {
   return (
-    <ContactWrapper id="contact">
+    <ContactWrapper id="contact" className="scroll">
       <Title>Kontakt</Title>
       <Adress>
         <DetailsWrapper>

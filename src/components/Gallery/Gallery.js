@@ -169,7 +169,7 @@ export default class Gallery extends Component {
     const { photoIndex, isOpen, images } = this.state
     const tmpGalleryImages = this.createImages()
     return (
-      <Wrapper id="gallery">
+      <Wrapper id="gallery" className="scroll">
         <Title>Ostatnie Projekty</Title>
         <ImgWrapper>
           {images.length > 0 ? (

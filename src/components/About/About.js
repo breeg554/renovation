@@ -106,7 +106,7 @@ const StyledAddress = styled.address`
 `
 const About = () => {
   return (
-    <AboutMe id="about">
+    <AboutMe id="about" className="scroll">
       <Title>Trochę o mnie</Title>
       <Wrapper>
         <ImgWrapper>
