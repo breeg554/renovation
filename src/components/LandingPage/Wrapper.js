@@ -36,6 +36,7 @@ const HeadingWrapper = styled.div`
 const Name = styled.h1`
   font-size: 2.2rem;
   font-weight: 300;
+  opacity: 0;
   ${({ theme }) => theme.mediaQ.small} {
     font-size: ${({ theme }) => theme.fontSize.l};
   }
@@ -49,6 +50,7 @@ const Name = styled.h1`
 const SubTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.xs};
   font-weight: 100;
+  opacity: 0;
   ${({ theme }) => theme.mediaQ.small} {
     font-size: ${({ theme }) => theme.fontSize.s};
   }
@@ -68,11 +70,11 @@ const Wrapper = () => {
     tl.fromTo(
       title,
       { x: "-=300" },
-      { duration: 1, delay: 0.5, x: "+=300", autoAlpha: 1 }
+      { duration: 1, delay: 0.5, x: "+=300", autoAlpha: 1, opacity: 1 }
     ).fromTo(
       subtitle,
       { x: "-=300" },
-      { duration: 1, x: "+=300", autoAlpha: 1 },
+      { duration: 1, x: "+=300", autoAlpha: 1, opacity: 1 },
       "-=0.75"
     )
   }, [])
